@@ -3,18 +3,20 @@
   <title>My Document</title> 
   <script type="text/javascript"> 
   function change() { 
-    var header = document.getElementsByidName("H1").item(0); 
+    var header = document.getElementById("c1"); 
     header.innerHTML = "CSIE@CGU"; 
      
-    var para = document.getElementsByidName("P").item(0); 
+    var para = document.getElementById("c2"); 
     para.innerHTML = "怎麼那麼棒！！."; 
   } 
   </script> 
 </head> 
 <body> 
   <input type="button" value="Change this document." onclick="change()"> 
-  <h1>CGU</h1> 
-  <p>好棒棒</p> 
+  <h1 id="c1">CGU</h1> 
+ 
+  <p id="c2">好棒棒</p> 
+
 </body> 
-</head> 
+
 </html
