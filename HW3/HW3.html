@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<script>
+for(let i=0;i<100;i++)
+{
+    setTimeout(randomString,400*i);
+}
+
+var string=document.getElementById("input");
+document.addEventListener('keydown',function(word)
+{
+    input.textContent+=word.key;
+    for(let i=0;i<1;i++)
+    {
+        if(output.textContent.slice(-1)==word.key)
+        {
+            output.textContent=output.textContent.slice(0,-1);
+        }
+        else
+        {
+            randomString(1);
+        }
+
+}
+})
+
+
+function randomString(e) 
+{ 
+    var t = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",a = t.length,n = "";
+    for (i = 0; i < 1; i++) n += t.charAt(Math.floor(Math.random() * a));
+    var outstring=document.getElementById("output");
+    output.textContent=n+output.textContent;
+    if(e==1)
+    {
+        return n
+    }
+}
+</script>
+</head>
+<body>
+<center><font size="6"><p>題目:</p></font></center>
+<font size="6"><p id="output"></p></font>
+<center><font size="6"><p>輸入位置:</p></font></center>
+<center><input placeholder="輸入英文大寫" id="input"></input></center>
+</body>
+</html>
