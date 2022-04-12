@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+
+</script>
+</head>
+
+
+<body>
+<script>
+$(document).ready(function(){
+
+    
+    $("button").click(function(){
+        
+        for(let i=0;i<19;i++)
+        {
+            setTimeout(ranpic,500*i);
+            
+        }  
+        
+        
+    });
+      
+});
+
+
+
+
+function ranpic(){
+    var pic=[];
+    pic[0]="lettera.jpg";
+    pic[1]="letterb.png";
+    pic[2]='letterc.png';
+    pic[3]='letterd.jpg';
+    pic[4]='lettere.png';
+    pic[5]='letterf.jpg';
+    pic[6]='letterg.jpg';
+    pic[7]='letterh.jpg';
+    pic[8]='letteri.jpg';
+    pic[9]='letterj.png';
+    pic[10]='letterk.jpg';
+    pic[11]='letterl.png';
+    pic[12]='letterm.jpg';
+    pic[13]='lettern.jpg';
+    pic[14]='lettero.png';
+    pic[15]='letterp.jpg';
+    pic[16]='letterq.jpg';
+    pic[17]='letterr.png';
+    pic[18]='letters.png';
+    pic[19]='lettert.jpg';
+    pic[20]='letteru.jpg';
+    pic[21]='letterv.jpg';
+    pic[22]='letterw.jpg';
+    pic[23]='letterx.jpg';
+    pic[24]='lettery.png';
+    pic[25]='letterz.png';
+    var randomBgIndex = Math.round( Math.random() * 25 );
+    document.write("<img src=" + pic[randomBgIndex] + " width='100' height='100' >")
+}
+
+</script>
+<button type="button" id='btn'>開始遊戲</button>
+</body>
+</html>
+
+
+
+
