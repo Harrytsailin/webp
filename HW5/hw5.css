@@ -1,0 +1,22 @@
+.st{
+    border-width: 3px;
+    border-style:inset;
+    width: 150px;
+    height: 30px;
+    border-color: rgb(94, 83, 59);
+    padding: 5px;
+    background-color: rgb(237, 218, 156);
+   } 
+    .st:hover{
+    background-color: rgb(0, 137, 139);
+    font-size: 20px;
+   }
+   .arrow {
+    border: solid rgb(74, 75, 38);
+    border-width: 0px 4px 4px 0;
+    display: inline-block;
+    padding: 8px;
+   }
+   .down {
+    transform: rotate(315deg);
+   }
