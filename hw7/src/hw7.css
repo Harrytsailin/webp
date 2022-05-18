@@ -1,0 +1,22 @@
+#login{
+    border: 5px rgb(227, 251, 255) solid;
+    width: 400px;
+    height: 500px;
+    margin-top:5%;
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
+    font-size:25px;
+    background-color:rgb(240, 211, 127);
+}
+h1{
+    color:rgb(73, 202, 235)
+}
+h3{
+    color:rgb(73, 202, 235)
+}
+#sigin{
+    font-size: large;
+    position: relative;
+    margin-top: 10%;
+}
