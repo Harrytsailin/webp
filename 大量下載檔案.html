@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>下載檔案嘗試</title>
+    <style>
+        button {
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <div id="capture" style="padding: 100px; background: #fff5c2">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <button onclick="screenshot()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        window.onload = function () {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            draw2();
+
+
+            function draw2() {
+
+                var imgObject = new Image();
+                imgObject.crossOrigin = "anonymous"
+
+
+                x = canvas.width,
+                    y = 0;
+
+                imgObject.onload = animate;
+                imgObject.src = "https://cdn.pixabay.com/photo/2017/03/01/18/06/satisfaction-guarantee-2109235_960_720.png";
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);  // clear canvas
+                    ctx.drawImage(imgObject, x, y);                       // draw image at current position
+                    x -= 4;
+                    if (x > 250) requestAnimationFrame(animate)        // loop
+                }
+                setInterval("block_capture()", "100");
+            }
+
+        }
+
+        var canvasPromise = html2canvas(document.body, {
+            allowTaint: true,
+            useCORS: true
+        });
+
+        function block_capture() {
+            html2canvas(document.querySelector("#capture")).then(function (canvas) {
+                a = document.createElement('a');
+                a.href = canvas.toDataURL("image/jpeg", 0.92).replace("image/jpeg", "image/octet-stream");
+                a.download = 'image.jpg';
+                a.click();
+            });
+        }
+
+
+
+
+        let arrayimage = [];
+        let i = 0;
+        function screenshot() {
+
+            html2canvas(document.getElementById('capture')).then(function (canvas) {
+                arrayimage[i] = canvas;
+                document.body.appendChild(arrayimage[i])
+                i++;
+            })
+
+            // print();
+        }
+
+            // function print(){
+            //     document.body.appendChild(arrayimage[0])
+            // }
+    </script>
+</body>
+
+</html>
